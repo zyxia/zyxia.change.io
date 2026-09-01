@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>五行与天干背诵</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="app">
+    <header>
+      <h1>五行与天干</h1>
+      <p class="subtitle">可选择题型进行专项或混合练习</p>
+    </header>
+
+    <section class="mode-select">
+      <p class="mode-label">练习题型</p>
+      <div class="mode-options">
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="wuxing" checked />
+          <span>五行生克</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="hehua" checked />
+          <span>天干合化</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="chong" checked />
+          <span>天干相冲</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="month" checked />
+          <span>月份地支</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div>连续正确 <strong id="streak">0</strong></div>
+      <div>累计 <strong id="correct">0</strong> / <span id="total">0</span></div>
+    </section>
+
+    <section class="card" id="quiz">
+      <p class="prompt" id="prompt">当前题目</p>
+      <div class="element" id="element" data-name="木">木</div>
+
+      <form id="form" autocomplete="off">
+        <div id="wuxingFields">
+          <label>
+            <span id="labelKe"></span>
+            <input name="ke" maxlength="1" />
+          </label>
+          <label>
+            <span id="labelKeBy"></span>
+            <input name="keBy" maxlength="1" />
+          </label>
+          <label>
+            <span id="labelShengBy"></span>
+            <input name="shengBy" maxlength="1" />
+          </label>
+          <label>
+            <span id="labelSheng"></span>
+            <input name="sheng" maxlength="1" />
+          </label>
+        </div>
+
+        <div id="hehuaFields" hidden>
+          <label>
+            <span id="labelPartner"></span>
+            <input name="partner" maxlength="1" />
+          </label>
+          <label>
+            <span id="labelHehua"></span>
+            <input name="hehua" maxlength="1" />
+          </label>
+        </div>
+
+        <div id="chongFields" hidden>
+          <label>
+            <span id="labelChong"></span>
+            <input name="chong" maxlength="1" />
+          </label>
+        </div>
+
+        <div id="monthFields" hidden>
+          <label>
+            <span id="labelMonth"></span>
+            <input name="branch" maxlength="1" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="checkBtn">核对</button>
+          <button type="button" id="nextBtn" hidden>下一题</button>
+        </div>
+      </form>
+
+      <p class="feedback" id="feedback" hidden></p>
+    </section>
+  </main>
+  <script src="app.js?v=6"></script>
+</body>
+</html>

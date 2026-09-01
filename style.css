@@ -1,0 +1,228 @@
+:root {
+  --wood: #2f7d4a;
+  --fire: #c4452a;
+  --earth: #b8862b;
+  --metal: #6b7280;
+  --water: #2b6cb0;
+  --ink: #1c1917;
+  --paper: #faf6ef;
+  --line: #e7dfd2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  color: var(--ink);
+  background: #efe8dc;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(47, 125, 74, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(196, 69, 42, 0.1), transparent 35%),
+    radial-gradient(circle at 70% 90%, rgba(43, 108, 176, 0.12), transparent 40%);
+  pointer-events: none;
+}
+
+.app {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #57534e;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 16px;
+  font-size: 0.95rem;
+  color: #57534e;
+}
+
+.mode-select {
+  margin-bottom: 16px;
+}
+
+.mode-label {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #78716c;
+}
+
+.mode-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mode-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(250, 246, 239, 0.8);
+  cursor: pointer;
+}
+
+.mode-option input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--ink);
+}
+
+.mode-option span {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
+.mode-option:has(input:checked) {
+  border-color: #a8a29e;
+  background: var(--paper);
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 10px 30px rgba(28, 25, 23, 0.06);
+}
+
+.prompt {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.3em;
+  color: #78716c;
+  font-size: 0.85rem;
+}
+
+.element {
+  margin: 12px 0 28px;
+  text-align: center;
+  font-size: 4.2rem;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  transition: color 0.25s ease;
+}
+
+.element[data-name="木"] { color: var(--wood); }
+.element[data-name="火"] { color: var(--fire); }
+.element[data-name="土"] { color: var(--earth); }
+.element[data-name="金"] { color: var(--metal); }
+.element[data-name="水"] { color: var(--water); }
+.element[data-kind="month"] { color: var(--ink); font-size: 2.4rem; letter-spacing: 0.12em; }
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+#wuxingFields,
+#hehuaFields,
+#chongFields,
+#monthFields {
+  display: grid;
+  gap: 14px;
+}
+
+#wuxingFields[hidden],
+#hehuaFields[hidden],
+#chongFields[hidden],
+#monthFields[hidden] {
+  display: none;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+label span {
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+}
+
+input:focus {
+  outline: 2px solid #a8a29e;
+  outline-offset: 1px;
+}
+
+input.ok {
+  border-color: #2f7d4a;
+  background: #f0f7f2;
+}
+
+input.bad {
+  border-color: #c4452a;
+  background: #fdf2f0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #faf6ef;
+  font: inherit;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+#nextBtn {
+  background: var(--wood);
+}
+
+.feedback {
+  margin: 16px 0 0;
+  line-height: 1.7;
+  min-height: 4.4em;
+}
+
+.feedback.ok { color: var(--wood); }
+.feedback.bad { color: var(--fire); }

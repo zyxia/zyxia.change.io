@@ -134,7 +134,23 @@ header h1 {
 .element[data-name="土"] { color: var(--earth); }
 .element[data-name="金"] { color: var(--metal); }
 .element[data-name="水"] { color: var(--water); }
-.element[data-kind="month"] { color: var(--ink); font-size: 2.4rem; letter-spacing: 0.12em; }
+.element[data-kind="month"],
+.element[data-kind="hour"] {
+  color: var(--ink);
+  font-size: 2.4rem;
+  letter-spacing: 0.12em;
+}
+
+.element[data-kind="season"],
+.element[data-kind="direction"],
+.element[data-kind="color"],
+.element[data-kind="zodiac"],
+.element[data-kind="personality"],
+.element[data-kind="body"] {
+  color: var(--ink);
+  font-size: 3.4rem;
+  letter-spacing: 0.16em;
+}
 
 form {
   display: grid;
@@ -144,7 +160,14 @@ form {
 #wuxingFields,
 #hehuaFields,
 #chongFields,
-#monthFields {
+#monthFields,
+#seasonFields,
+#hourFields,
+#directionFields,
+#colorFields,
+#zodiacFields,
+#personalityFields,
+#bodyFields {
   display: grid;
   gap: 14px;
 }
@@ -152,7 +175,14 @@ form {
 #wuxingFields[hidden],
 #hehuaFields[hidden],
 #chongFields[hidden],
-#monthFields[hidden] {
+#monthFields[hidden],
+#seasonFields[hidden],
+#hourFields[hidden],
+#directionFields[hidden],
+#colorFields[hidden],
+#zodiacFields[hidden],
+#personalityFields[hidden],
+#bodyFields[hidden] {
   display: none;
 }
 

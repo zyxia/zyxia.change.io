@@ -33,6 +33,34 @@
           <input type="checkbox" name="typeFilter" value="month" checked />
           <span>月份地支</span>
         </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="season" checked />
+          <span>地支四季</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="hour" checked />
+          <span>地支时辰</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="direction" checked />
+          <span>地支方位</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="color" checked />
+          <span>地支颜色</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="zodiac" checked />
+          <span>地支生肖</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="personality" checked />
+          <span>地支性格</span>
+        </label>
+        <label class="mode-option">
+          <input type="checkbox" name="typeFilter" value="body" checked />
+          <span>地支脏腑</span>
+        </label>
       </div>
     </section>
 
@@ -90,6 +118,55 @@
           </label>
         </div>
 
+        <div id="seasonFields" hidden>
+          <label>
+            <span id="labelSeason"></span>
+            <input name="season" maxlength="2" />
+          </label>
+        </div>
+
+        <div id="hourFields" hidden>
+          <label>
+            <span id="labelHour"></span>
+            <input name="hour" maxlength="20" />
+          </label>
+        </div>
+
+        <div id="directionFields" hidden>
+          <label>
+            <span id="labelDirection"></span>
+            <input name="direction" maxlength="10" />
+          </label>
+        </div>
+
+        <div id="colorFields" hidden>
+          <label>
+            <span id="labelColor"></span>
+            <input name="color" maxlength="20" />
+          </label>
+        </div>
+
+        <div id="zodiacFields" hidden>
+          <label>
+            <span id="labelZodiac"></span>
+            <input name="zodiac" maxlength="2" />
+          </label>
+        </div>
+
+        <div id="personalityFields" hidden>
+          <label>
+            <span id="labelPersonality"></span>
+            <input name="personality" maxlength="20" />
+          </label>
+        </div>
+
+        <div id="bodyFields" hidden>
+          <label>
+            <span id="labelBody"></span>
+            <input name="body" maxlength="30" />
+          </label>
+        </div>
+
         <div class="actions">
           <button type="submit" id="checkBtn">核对</button>
           <button type="button" id="nextBtn" hidden>下一题</button>
@@ -99,6 +176,6 @@
       <p class="feedback" id="feedback" hidden></p>
     </section>
   </main>
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>
